@@ -3299,22 +3299,26 @@ html { scroll-padding-top: 100px; }
             </a>
           </div>
 
-          <form class="form reveal" data-form>
+          <form action="https://api.web3forms.com/submit" method="POST" class="form reveal" data-form>
+            <input type="hidden" name="access_key" value="c204c393-60b1-4d3d-8be9-dd794a41f0fc">
+            <input type="hidden" name="from_name" value="Virat Patel Portfolio">
+            <input type="hidden" name="subject" value="New Contact Form Submission from viratpatel.dev">
+
             <div class="form__row">
               <div class="field">
                 <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your full name" required>
+                <input id="name" name="name" type="text" placeholder="Your full name" required>
               </div>
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" type="email" placeholder="you@company.com" required>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required>
               </div>
             </div>
 
             <div class="form__row">
               <div class="field">
                 <label for="type">Project Type</label>
-                <select id="type" required>
+                <select id="type" name="project_type" required>
                   <option value="">Select a service</option>
                   <option>Mobile App (Flutter)</option>
                   <option>Web Development</option>
@@ -3327,7 +3331,7 @@ html { scroll-padding-top: 100px; }
               </div>
               <div class="field">
                 <label for="budget">Budget Range</label>
-                <select id="budget">
+                <select id="budget" name="budget">
                   <option value="">Select budget</option>
                   <option>Under $5,000</option>
                   <option>$5,000 – $15,000</option>
@@ -3340,7 +3344,7 @@ html { scroll-padding-top: 100px; }
 
             <div class="field" style="margin-bottom: 8px;">
               <label for="msg">Tell me about your project</label>
-              <textarea id="msg" placeholder="What are you building? Who is it for? What's the timeline?" required></textarea>
+              <textarea id="msg" name="message" placeholder="What are you building? Who is it for? What's the timeline?" required></textarea>
             </div>
 
             <button type="submit" class="form__submit">
