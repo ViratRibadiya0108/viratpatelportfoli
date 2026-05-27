@@ -814,6 +814,48 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .trust__mark:hover { opacity: 1; transform: translateY(-2px); }
 .trust__mark--italic { font-style: italic; }
 
+/* Logo image trust marks */
+.trust__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  filter: grayscale(100%) contrast(0.8);
+  transition: opacity 0.35s, filter 0.35s, transform 0.35s;
+  flex-shrink: 0;
+}
+.trust__logo:hover {
+  opacity: 1;
+  filter: grayscale(0%) contrast(1);
+  transform: translateY(-2px);
+}
+.trust__logo img {
+  height: clamp(28px, 3.5vw, 44px);
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+.trust__logo--placeholder {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.trust__logo--placeholder .trust__logo-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1.5px dashed rgba(74, 56, 38, 0.35);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coffee-soft);
+  white-space: nowrap;
+}
+
 /* Home highlights (service preview, etc) */
 .highlights { background: var(--warm-white); }
 .highlights__grid {
@@ -3326,12 +3368,29 @@ html { scroll-padding-top: 100px; }
       <div class="container trust__inner">
         <span class="trust__label">Trusted by founders building at</span>
         <div class="trust__marks">
-          <span class="trust__mark">Northwind</span>
-          <span class="trust__mark trust__mark--italic">Velocity</span>
+
+          <!-- Logo 1: Raise Fitness -->
+          <div class="trust__logo">
+            <img src="logo-raise-fitness.png" alt="Raise Fitness" loading="lazy">
+          </div>
+
+          <!-- Logo 2: Placeholder (send logo soon) -->
+          <div class="trust__logo trust__logo--placeholder">
+            <div class="trust__logo-inner">Your Logo</div>
+          </div>
+
+          <!-- Logo 3: Text-based brand -->
           <span class="trust__mark">Mosaic Labs</span>
+
+          <!-- Logo 4: Text-based brand -->
           <span class="trust__mark trust__mark--italic">Atlas &amp; Co.</span>
+
+          <!-- Logo 5: Text-based brand -->
           <span class="trust__mark">Halcyon</span>
+
+          <!-- Logo 6: Text-based brand -->
           <span class="trust__mark trust__mark--italic">Foundry</span>
+
         </div>
       </div>
     </section>
